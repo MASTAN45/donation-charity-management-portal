@@ -1,3 +1,0 @@
-- [x] Clean home.component.ts: Remove duplicate imports, merge conflict markers, and restructure code
-- [x] Run ng serve to verify compilation
-- [x] Provide brief explanation of fixes
