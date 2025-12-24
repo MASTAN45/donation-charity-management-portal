@@ -1,0 +1,155 @@
+// Navbar Variables using CSS Custom Properties
+$navbar-bg: var(--bg-primary);
+$navbar-shadow: var(--shadow-medium);
+$primary-color: var(--primary-color);
+$text-color: var(--text-primary);
+$hover-color: var(--primary-dark);
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$border-radius: var(--radius-md);
+
+// Sticky Navbar
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $navbar-bg;
+  box-shadow: $navbar-shadow;
+  padding: 0;
+  width: 100%;
+}
+
+// Navbar Container
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Logo Section
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-color;
+
+  .navbar-icon {
+    color: $primary-color;
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: $transition;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Menu Section
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .navbar-link {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: $text-color;
+    font-weight: 500;
+    transition: $transition;
+    padding: 0.5rem 0;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Hamburger Toggle
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: $text-color;
+    margin: 3px 0;
+    transition: $transition;
+  }
+}
+
+// Mobile Styles
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: $navbar-bg;
+    width: 100%;
+    text-align: center;
+    transition: $transition;
+    box-shadow: $navbar-shadow;
+
+    &.active {
+      left: 0;
+    }
+
+    .navbar-link {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  // Hamburger Animation
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.2rem;
+
+    .navbar-icon {
+      font-size: 1.5rem;
+    }
+  }
+
+  .navbar-container {
+    padding: 0.75rem 1rem;
+  }
+}
