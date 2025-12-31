@@ -1,0 +1,1 @@
+{"version":3,"file":"simple-donation.controller.d.ts","sourceRoot":"","sources":["../../src/controllers/simple-donation.controller.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAG5C,qBAAa,wBAAwB;WAEtB,oBAAoB,CAAC,GAAG,EAAE,OAAO,EAAE,GAAG,EAAE,QAAQ;WAyChD,qBAAqB,CAAC,GAAG,EAAE,OAAO,EAAE,GAAG,EAAE,QAAQ;CAa/D"}
