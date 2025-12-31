@@ -1,0 +1,88 @@
+<div class="cause-details" *ngIf="cause">
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-image" [style.background-image]="'url(' + cause.image + ')'">
+      <div class="hero-overlay">
+        <div class="container">
+          <h1 class="hero-title">{{ cause.title }}</h1>
+          <p class="hero-subtitle">{{ cause.shortDescription }}</p>
+          <div class="hero-category">
+            <span class="category-badge">{{ cause.category }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cause Content -->
+  <section class="cause-content">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Main Description -->
+        <div class="main-content">
+          <h2>About This Cause</h2>
+          <p class="detailed-description">{{ cause.detailedDescription }}</p>
+        </div>
+
+        <!-- Impact Statistics -->
+        <div class="impact-stats">
+          <h3>Impact Statistics</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number">{{ cause.impactStats.beneficiaries | number }}</div>
+                <div class="stat-label">Beneficiaries</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number">${{ cause.impactStats.fundsRaised | number }}</div>
+                <div class="stat-label">Funds Raised</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number">${{ cause.impactStats.goal | number }}</div>
+                <div class="stat-label">Goal</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-hands-helping"></i>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number">{{ cause.impactStats.volunteers }}</div>
+                <div class="stat-label">Volunteers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donate CTA -->
+      <div class="donate-section">
+        <div class="donate-content">
+          <h3>Make a Difference Today</h3>
+          <p>Your donation directly supports this cause and helps us reach our impact goals.</p>
+          <button class="btn btn-primary btn-donate" (click)="donate()">
+            <i class="fas fa-heart"></i>
+            Donate Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="loading" *ngIf="!cause">
+  <p>Loading cause details...</p>
+</div>
